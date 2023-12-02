@@ -60,15 +60,10 @@ func part1(input []string) {
 
 func part2(input []string) {
 	totalSum := 0
-	gameScores := make(map[int]int)
 
 	for _, line := range input {
 		// Assign Game Numbers to 0
 		game := strings.Split(line, ":")
-		gameNumber := regexp.MustCompile(`\d+`).FindString(game[0])
-		gn, _ := strconv.Atoi(gameNumber)
-		gameScores[gn] = 0
-
 		sets := strings.Split(game[1], ";")
 		mapColors := map[string]int{
 			"red":   1,
